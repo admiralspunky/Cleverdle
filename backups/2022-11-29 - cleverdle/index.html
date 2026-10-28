@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleverdle by AdmiralSpunky</title>
+	<link rel="shortcut icon" type="image/jpg" href="favicon/favicon-16x16.png"/>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 400px)" href="mobile.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 400px)" href="full.css" />
+	
+  </head>
+  <body onload="f()">
+
+		<script>
+		function f()
+		{
+			if( localStorage.getItem('dark') == "true" ) 
+			{
+				document.body.classList.add('dark')
+			}
+		}
+		</script>
+
+		<h2>Cleverdle by AdmiralSpunky</h2>
+		Welcome! Take a key for coming in!
+		<div class="row">
+			<a href="game.html" onClick="localStorage.setItem('mode','daily');
+				localStorage.removeItem('wordles'); 
+				localStorage.removeItem('guessRows'); 
+				localStorage.removeItem('guessesRemaining');
+				localStorage.removeItem('currentWordle');" 
+				class="button">daily - play once per day, with 6 guesses</a>
+			<a href="game.html" onClick="localStorage.setItem('mode','free'); 
+				localStorage.removeItem('wordles'); 
+				localStorage.removeItem('guessRows'); 
+				localStorage.removeItem('guessesRemaining');
+				localStorage.removeItem('currentWordle');"
+				class="button freeButton">unlimited - play whenever and however</a>
+		</div>
+	
+		<div id="desc">
+			<br><br>
+			Inquiries? Plaudits? Remuneration? Try <a href="admiralspunky@gmail.com">admiralspunky@gmail.com</a>
+			<br><br>
+			You've played Wordle by now. You might have even played Zaratustra's <a href="https://zaratustra.itch.io/dordle">Dordle</a>. If you haven't, you should. Go on. I'll wait.
+			<br><br>Instead of solving one Wordle, you're solving several. Only one puzzle is showing at a time, but there are many different words to find, and each time you guess, that guess is checked against every puzzle. 
+			You only start with a few guesses, but you gain an extra every time you solve a puzzle.
+			<br><br>
+		</div>
+		
+		<div class="row">
+			<a href="settings.html" class="button">settings</a>
+			<a href="changelog.txt" class="button">changelog</a>
+		</div>
+	</body>
+
+
+	
+
+</html>

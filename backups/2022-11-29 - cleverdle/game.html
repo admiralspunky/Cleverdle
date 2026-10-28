@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleverdle by AdmiralSpunky</title>
+	<link rel="shortcut icon" type="image/jpg" href="favicon/favicon-16x16.png"/>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 400px)" href="mobile.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 400px)" href="full.css" />
+	<script src="alert.js"> </script>
+
+		
+  </head>
+  
+  <body onload="f()">
+	<script>
+		function f()
+		{
+			if( localStorage.getItem('dark') == "true" ) 
+			{
+				document.body.classList.add('dark')
+			}
+			
+			if( localStorage.getItem('altColor') == "true" ) 
+			{
+				document.body.classList.add('altColor')
+			}
+
+			// hide previous guesses 
+			if( localStorage.getItem('hide') == "true" ) 
+			{
+				document.body.classList.add('hide')
+				let hideCB = document.getElementById("hideG");
+				hideCB.checked = localStorage.getItem("hide")
+			}
+			
+		}
+	</script>
+	
+	
+	
+
+	<div class="layout">
+	
+
+	
+		<div class = "column">
+		
+			<a href="index.html" class="leftTitle">Welcome</a>
+			<div class="rightTitle">Wordle 0</div>
+			
+
+			
+			<div class="previewButtonContainer"></div>
+
+			<div class="key-container"></div>
+			
+			<div class="navigation" name="navigation">
+				<a href="index.html">Index</a> | 
+				<a href="settings.html">Settings</a>
+			</div>
+		</div>
+		
+		<div class = "column">
+			
+			<div id="summary" class="row" style="opacity: .5"></div>
+			<br>
+			<div class="heartsDiv">guesses remaining: </div>
+			<div class="checkbox">	<label><input type="checkbox" id="hideG">hide previous guesses</label>	</div>
+			<div class="onePuzzle-container"></div>
+			<script>
+				let checkbox = document.getElementById("hideG");
+
+				checkbox.addEventListener( 'change', function() {
+					localStorage.setItem('hide',this.checked);
+					if(this.checked) {
+						document.body.classList.add('hide')
+					} else {
+						document.body.classList.remove('hide')     
+					}
+				});
+			</script>
+
+		</div>
+	</div>	
+
+	
+	<!-- 
+	This is the New Alert Box div.
+	The id value must be identical to the value for the variable NewAlertDivIDvalue in the JavaScript.
+	The first six style declarations are required.
+	The rest of the style declarations visually design the new alert box and may be omitted, replaced, or more declarations added.
+	-->
+	<div id="new-alert-box-div" 
+		style="
+		   display: none;
+		   position: absolute;
+		   z-index: 99;
+		   left: 0;
+		   top: 0;
+		   box-sizing: border-box;
+		   background-color: #fff;
+		   color: #000;
+		   font-size: 1em;
+		   border: 1px solid #000;
+		   border-radius: 10px;
+		   padding: 1em;
+		   margin: 2em 2em 1em 1em;
+		   max-width: 500px;
+		   box-shadow: 0px 0px 9px 3px #333;
+		">
+
+		<!--
+		This is a "dismiss" image within the new alert box div that can be tapped to close/dismiss the new alert box.
+		Replace the image with your own image or your own text.
+		-->
+		<div style="position: absolute; right: -10px; top: -10px;">
+		<a href="javascript:RemoveNewAlert()">
+		<img src="closeboxX20.png" style="height: 20px; width: 20px; border: none; outline: none;" alt="X">
+		</a>
+		</div>
+
+		<!--
+		This is the div within the new alert box div that will contain the alert message text.
+		The id value must be identical to the value for the variable NewAlertTextIDvalue in the JavaScript.
+		-->
+		<div id="new-alert-box-text"></div>
+
+	</div><!-- id="new-alert-box-div" -->
+	<!-- End of New Alert Box div. -->
+	
+
+	<!--I'm just loading my wordlists from other files; the actual program is in script.js-->
+	<script src="targetWords.js"> </script>
+	<script src="validGuesses.js"> </script>
+	<script src="script.js"> </script>
+  </body>
+</html>

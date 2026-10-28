@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleverdle by AdmiralSpunky</title>
+	<link rel="shortcut icon" type="image/jpg" href="res/icons8-three-leaf-clover-64.png"/>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 400px)" href="mobile.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 400px)" href="full.css" />
+	<script src="alert.js"> </script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-V99B67FTY8"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-V99B67FTY8');
+	</script>
+		
+  </head>
+  
+	<body onload="f()">
+	<script>
+		function f()
+		{
+			if( localStorage.getItem('dark') != "false" ) 
+			{
+				document.body.classList.add('dark')
+			}
+						
+		}
+	</script>
+	
+	<a href="index.html"><h2>tutorial for Cleverdle by AdmiralSpunky</h2></a>
+	
+	You've played Wordle; now you're playing 16 Wordles at once. Each time you guess a word, your guess is applied to each of the puzzles, and each one gives you its own feedback. You start with only 6 lives, but you earn an extra one every time you solve a puzzle. 
+	<br><br>
+	You can use enter/backspace, or the arrow keys on a keyboard, to navigate around the puzzle display. When you finish the game, the stats report that pops up is automatically copied to your clipboard.
+	<br><br>
+	Do you have any other questions? Have you played Zaratustra's <a href="https://zaratustra.itch.io/dordle">Dordle</a>? If you haven't, please do. If you have, and you still have questions about Cleverdle, try admiralspunky@gmail.com
+	
+	<div class="navigation" name="navigation">
+		<a href="changelog.txt">changelog</a>
+	</div>
+
+	</body>
+	
+</html>

@@ -1,0 +1,20 @@
+test
+
+I should add a readme, so I won't have to keep explaining intuitive mechanics to simpletons
+can I flip individual letters, on the preview buttons, when they're newly discovered?
+
+add a donation button to the postmortem somehow
+when you refresh a daily puzzle, it locks you out - which is good sometimes, because you don't want to let people do most of the puzzle then restart; but that protection is unwanted at other times, like when you acciden
+non-QWERTY text entry method
+color schemes - classic, Portal, Dorian
+how about a mode with misleading info? 
+you can solve the daily puzzle again on a different browser
+summary for each puzzle - I've got the Hit letters printed on the preview buttons; now I need to figure out how to print the Near letters (can I print numbers on top the keys? This letter cannot be in this position?)
+Hard mode - can't change puzzles without finishing one
+video tutorial
+maybe make my localStorage variables more secure, so they can't just be edited client-side?
+haptic feedback?
+auto-fill starting guess?
+do not force the user to log in, but give him the option of continuing his streak on another device
+on the summary row, where I don't have a Hit letter, I want to display all of the Near letters that it could not be
+I could do streak protection on weekends, but what about holidays? Those are far more surprising.

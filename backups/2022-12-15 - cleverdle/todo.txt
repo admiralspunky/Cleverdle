@@ -1,0 +1,14 @@
+switch the grid to a Grid?
+
+add a donation button to the postmortem somehow (I have a donation link, which will have to be good enough for now)
+non-QWERTY text entry method
+color schemes - classic, Portal, Dorian
+how about a mode with misleading info? 
+you can solve the daily puzzle again on a different browser
+Hard mode - can't change puzzles without finishing one
+video tutorial
+maybe make my localStorage variables more secure, so they can't just be edited client-side?
+haptic feedback?
+auto-fill starting guess?
+do not force the user to log in, but give him the option of continuing his streak on another device
+I could do streak protection on weekends, but what about holidays? Those are far more surprising.

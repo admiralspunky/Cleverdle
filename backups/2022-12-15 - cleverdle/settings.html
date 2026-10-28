@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleverdle by AdmiralSpunky</title>
+	<link rel="shortcut icon" type="image/jpg" href="favicon/favicon-16x16.png"/>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" media="only screen and (max-width: 400px)" href="mobile.css" />
+	<link rel="stylesheet" media="only screen and (min-width: 400px)" href="full.css" />
+	
+  </head>
+  <body onload="f()">
+	<script>
+		function f()
+		{
+			//just checking whatever boxes the user checked last time, based on localStorage
+		
+			/*I've been working on a placeholder replacement for the QWERTY onscreen keyboard, but it's not ready yet, so I'm just leaving it in the code, but commenting out this switch 	
+			var keyboardSelector
+			switch( localStorage.getItem('keyboard') ) 
+			{
+				case null:
+				case "QWERTY":
+					keyboardSelector = document.getElementById("keyboard1");
+					break;
+				case "placeholder":
+					keyboardSelector = document.getElementById("keyboard2");
+					break;		
+			}
+			keyboardSelector.checked = true
+			*/
+			
+			if( localStorage.getItem('dark') == "true" ) 
+			{
+				document.body.classList.add('dark')
+				let checkbox = document.getElementById("darkmode");
+				checkbox.checked = true
+			}
+			
+			if( localStorage.getItem('altColor') == "true" ) 
+			{
+				document.body.classList.add('altColor')
+				let checkbox = document.getElementById("altColor");
+				checkbox.checked = true
+			}
+			
+			var sliderG = document.getElementById("rangeGuesses");
+			var outputG = document.getElementById("demoGuesses");
+			outputG.innerHTML = sliderG.value;
+			if (localStorage.getItem('initialGuesses') != null )
+			{
+				sliderG.value = localStorage.getItem('initialGuesses') 
+				outputG.innerHTML = sliderG.value;
+			}
+			
+			sliderG.oninput = function() {
+			  outputG.innerHTML = this.value;
+			  localStorage.setItem( 'initialGuesses',this.value )
+			}
+		
+		
+			
+			var sliderP = document.getElementById("rangePuzzles");
+			var outputP = document.getElementById("demoPuzzles");
+			outputP.innerHTML = sliderP.value;
+			if (localStorage.getItem('numPuzzles') != null )
+			{
+				sliderP.value = localStorage.getItem('numPuzzles') 
+				outputP.innerHTML = sliderP.value;
+			}
+			
+			sliderP.oninput = function() {
+			  outputP.innerHTML = this.value;
+			  localStorage.setItem( 'numPuzzles',this.value )
+			}
+			
+			
+			var sliderUD = document.getElementById("upDownSlider");
+			var outputUD = document.getElementById("upDownOutput");
+			outputUD.innerHTML = sliderUD.value;
+			if (localStorage.getItem('upDown') != null )
+			{
+				sliderUD.value = localStorage.getItem('upDown') 
+				outputUD.innerHTML = sliderUD.value;
+			}
+			
+			sliderUD.oninput = function() {
+			  outputUD.innerHTML = this.value;
+			  localStorage.setItem( 'upDown',this.value )
+			}
+		}
+	</script>
+	
+	
+	<a href="index.html"><h2>settings for Cleverdle by AdmiralSpunky</h2></a>
+		
+	
+	<div class="row" >
+		<a href="game.html"  class="button">resume</a>
+		<a href="game.html" onClick="onClick=localStorage.setItem('mode','free'); 
+			localStorage.removeItem('wordles'); 
+			localStorage.removeItem('guessRows'); 
+			localStorage.removeItem('guessesRemaining');
+			localStorage.removeItem('currentWordle');" 
+			class="button">new</a>
+	</div>
+		
+	<div class="slidecontainer">
+		free mode guesses: <span id="demoGuesses"></span>
+		<input type="range" min="1" max="10" value="6" class="slider" id="rangeGuesses">
+	</div>
+	<script>
+		var slider = document.getElementById("rangeGuesses");
+		var output = document.getElementById("demoGuesses");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+	</script>
+	
+	<div class="slidecontainer">
+		free mode numPuzzles: <span id="demoPuzzles"></span>
+		<input type="range" min="1" max="128" value="16" class="slider" id="rangePuzzles">
+	</div>
+	<script>
+		var slider = document.getElementById("rangePuzzles");
+		var output = document.getElementById("demoPuzzles");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+	</script>
+	
+	<div class="slidecontainer">
+		up/down value (the dimensions of the puzzles area change with the dimensions of the screen): <span id="upDownOutput"></span>
+		<input type="range" min="2" max="6" value="3" class="slider" id="upDownSlider">
+	</div>
+	<script>
+		var slider = document.getElementById("upDownSlider");
+		var output = document.getElementById("upDownOutput");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+		  output.innerHTML = this.value;
+		}
+	</script>
+
+	<br><br>
+
+	<div class="row">
+	
+		<div class=checkbox>	<label><input type="checkbox" id="darkmode">dark mode</label>	</div>
+			<script>
+				let checkbox = document.getElementById("darkmode");
+
+				checkbox.addEventListener( 'change', function() {
+					localStorage.setItem('dark',this.checked);
+					if(this.checked) {
+						//document.body.classList.toggle("dark");
+						document.body.classList.add('dark')
+					} else {
+						//document.body.classList.toggle("dark");
+						document.body.classList.remove('dark')     
+					}
+				});
+			</script>
+		
+			
+			<div class=checkbox>	<label><input type="checkbox" id="altColor">alternate colors</label>	</div>
+		
+
+			<script>
+				let checkbox2 = document.getElementById("altColor");
+
+				checkbox2.addEventListener( 'change', function() {
+					localStorage.setItem('altColor',this.checked);
+					if(this.checked) {
+						document.body.classList.add('altColor')
+					} else {
+						document.body.classList.remove('altColor')     
+					}
+				});
+			</script>
+		</div>
+	
+		<div class="row">
+			<div class="empty test tile">empty</div>
+			<div class="miss test tile">miss</div>
+			<div class="near test tile">near</div>
+			<div class="hit test tile">hit</div>
+			<div class="current test tile">current</div>
+		</div>
+
+		<br> Hit - you know exactly what letter goes in this spot
+		<br> Near - you've found a letter that is somewhere else in this word
+		<br> Current - this is where the next letter you type will go, like a cursor
+
+<!--I've been working on a placeholder replacement for the QWERTY onscreen keyboard, but it's not ready yet, so I'm just leaving it in the code, but commenting out this switch 	
+		<br><br>
+
+		<input type="radio" id="keyboard1" name="keyboard" onclick="localStorage.setItem('keyboard','QWERTY');">
+			<label for="QWERTY">QWERTY</label>
+		<br>
+		<input type="radio" id="keyboard2" name="keyboard" onclick="localStorage.setItem('keyboard','placeholder');">
+			<label for="placeholder">placeholder</label>
+			
+-->			
+
+	</body>
+
+<!-- I eventually want to do a CSS Zen Garden type thing with the colors
+	<div>
+	  <input type="radio" id="green-yellow" name="color" value="green-yellow" checked
+		onclick="var e = document.getElementById('hit'); e.style.backgroundColor = 'green';">
+	  <label for="green-yellow">green-yellow</label>
+	</div>
+
+	<div>
+	  <input type="radio" id="blue-orange" name="color" value="blue-orange"
+		onclick="document.getElementById('hit').style.backgroundColor = 'blue'; document.getElementById('near').style.backgroundColor = 'orange'; ">
+	  <label for="blue-orange">blue-orange</label>
+	</div>
+-->
+	
+
+</html>

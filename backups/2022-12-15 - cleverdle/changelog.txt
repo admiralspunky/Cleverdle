@@ -1,0 +1,123 @@
+v2.0 2022-12-04
+lock the scrollbar
+you can use Enter and BS to navigate on mobile 
+tutorial
+don't check for Daily puzzle attempt until you actually submit a guess
+
+v1.9 2022-11-29
+fixed winrate%
+flip the newly discovered letters on the previewButton
+the summary row updates correctly now (perhaps for reals this time)
+better descriptions for the colors
+added a gradient for the Near color
+
+v1.8 2022-11-22
+URLs are case-sensitive
+when a puzzle has no more unsolved letters, go ahead and solve it
+winrate stat
+do a flip animation on the preview button when that puzzle is solved
+put the name of the current day in the postmortem
+new favicon
+
+v1.7 2022-11-09
+I'm renaming this game to 'Cleverdle'. May God have mercy on our souls.
+updating the summary row for the current wordle
+in the navigation row, the a href links don't work - but only in fullscreen
+
+v1.6 2022-11-02
+on mobile, it always says "no, you need to enter a 5-letter word" (this was a problem with my onscreen keyboard)
+navigation row should hover in place (CSS position:fixed;)
+Resume/refresh works better now
+there's now a setting for how far the up/down keys will take you in the puzzles display (because the display scales with your monitor's dimensions, and the program doesn't get to know what those dimensions are)
+looks better on widescreen monitors (I switched from 'vw' to 'vmin')
+Victory is yours! ought to say the number of the Daily Puzzle that you just solved
+autocopy may or may not actually work this time 
+
+v1.5 2022-10-20
+several internal changes - store guessesRemaining, remove currentRow, no longer do I draw and then hide future rows
+if you accidentally solve multiple wordles with one guess, now you get credit multiple times
+
+v1.4 2022-09-24
+Resume button - still might not work in every case, but it's good enough for now
+improved stats - maxStreak, W-L, guessesRemaining
+switch from sessionStorage to localStorage (the former was cleared whenever the user tried to change a setting during a puzzle)
+no longer gives credit for solving the same puzzle multiple times
+
+v 1.3 2022-09-15
+include changelog
+settings page
+refresh no longer adds Current to old tiles
+keys are a bit larger on mobile 
+
+v 1.2 2022-08-31 
+assorted prettification
+postmortem looks better now, and I fixed auto-copy
+when the user enters a naughty word, call deleteLetter() 5 times
+more fun with sliders
+full style to go with the mobile style
+layout is layoutier
+debug toggle
+daily streak
+repeated Near letters could each be colored yellow although only one of them was in the puzzle
+
+v1.1 2022-08-24
+embiggen the sliders
+default to 16 puzzles instead of 64
+box scores make more sense now
+if you type half a guess then switch puzzles, you no longer get info colors for your half-guess
+rearrange elements to work better on phones
+
+v1.0 2022-06-07 
+make a checkbox to hide the button panel
+use the left/right arrow keys to navigate
+mobile style is wild
+hide the future guessRows, and make a lives counter
+
+v0.09 2022-04-10 
+press backspace on an empty row to cycle backwards
+at the end of the game, go ahead and show the solutions to every puzzle
+switched back to "hide previous guesses", because "hide previous non-yellow guesses" wasn't really doing a whole lot
+summary row - but just for the green letters for now
+
+v0.08 2022-04-07 
+I was previously hiding all of the old guesses; now I'm hiding the old, unimportant ones
+flip that first row sheesh
+use the enter key (physical or onscreen) to move to the next unsolved puzzle
+shrink my old guessRows
+share window - automatically copied to keyboard
+
+v0.07 2022-04-05 
+disallow solving the daily puzzle more than once
+go to the next puzzle when you solve the current one
+refresh protection actually works now hopefully
+
+v0.06 2022-04-01 
+checkbox to hide the old guesses
+refresh protection - I save all of the sessiony variables in sessionStorage
+
+v0.05 2022-03-26 
+switched from alert() to Will Bontrager's NewAlert()
+colorblind mode
+give each puzzle a Summary box, that looks the same(?) as that puzzle's Preview button
+
+v0.04 2022-03-22
+print the actual letters on the summary boxes, both Hit and Near letters, instead of just colored squares
+current btn = cornflower blue, so it's easier to see which puzzle you're on
+adjust number of puzzles from 64
+stats for the daily puzzle
+
+v0.03 2022-03-15
+dark mode
+initial guesses slider
+formatting on Firefox
+splash page prettification
+
+v0.02 2022-03-10 
+Fix disappearing yellow keys 
+postmortem
+seeded daily puzzle
+splash page
+favicon
+
+
+2022-03-08 v0.01 - sent to Ross for the first time

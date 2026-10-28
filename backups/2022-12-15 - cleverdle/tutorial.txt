@@ -1,0 +1,5 @@
+You've played Wordle; now you're playing 16 Wordles at once. Each time you guess a word, your guess is applied to each of the puzzles, and each one gives you its own feedback. You start with only 6 lives, but you earn an extra one every time you solve a puzzle. 
+
+You can use enter/backspace, or the arrow keys on a keyboard, to navigate around the puzzle display. When you finish the game, the stats report that pops up is automatically copied to your clipboard.
+
+Do you have any other questions? Have you played Dordle?

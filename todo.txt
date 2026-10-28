@@ -1,0 +1,28 @@
+on mobile, there should be extra onscreen buttons to help navigate
+the navigation seems to freeze, on mobile
+host the game on my github/ change the link on Wordleverse
+remove setting for daily mode?
+try to find why the screen freezes on the last guess, but only sometimes (I *think* that it times out on line 767 because I've got a while (wordles[currentWordle].solved), but they might all be solved; though I still don't know why that only happens some of the time
+
+icons that change colors
+daily/unlimited, single/marathon - those should probably be separate options, with stats for daily marathons
+the New Game button needs a confirmation box
+Marathon mode - press enter (or space) to keep rolling
+make the screen bg flash a different color when you get a guess correct?
+make an extra donation popup whenever the user's Attempts is a multiple of 10
+video tutorial, or just get someone to do a video for me?
+make a Paypal button that says Paypal?
+use an alternative to/beside Paypal? BuyMeACoffee? Patreon? 
+transfer code, like Polygonle
+switch the grid to a Grid?
+non-QWERTY text entry method
+color schemes - classic, Portal, Dorian
+you can solve the daily puzzle again on a different browser
+Hard mode - can't change puzzles without finishing one
+maybe make my localStorage variables more secure, so they can't just be edited client-side?
+haptic feedback?
+auto-fill starting guess?
+I could do streak protection on weekends, but what about holidays? Those are far more surprising.
+localStorage.removeItem doesn't seem to work in Firefox?
+let the user click in the middle of the word, instead of starting on the left?
+confetti?
